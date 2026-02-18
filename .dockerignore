@@ -1,0 +1,48 @@
+# Version Control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.eggs
+dist
+build
+
+# Virtual Environment
+.venv
+venv
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Documentation Build
+doc/_build
+doc/_static
+
+# Testing & Quality
+.pytest_cache
+.tox
+.mypy_cache
+.coverage
+htmlcov
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other
+*.md
+*.rst
+!README.rst
+LICENSE
+Makefile
+tox.ini
+.pre-commit-config.yaml
+.readthedocs.yaml
+uv.lock

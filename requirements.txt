@@ -1,0 +1,37 @@
+# Python-snap7 Requirements
+# متطلبات python-snap7
+#
+# Core dependency (installed automatically with pip install python-snap7)
+# المتطلب الأساسي (يُثبّت تلقائياً مع pip install python-snap7)
+# python-snap7 has no runtime dependencies beyond the standard library and the snap7 native library.
+# لا يحتاج python-snap7 لأي متطلبات إضافية غير المكتبة القياسية ومكتبة snap7 الأصلية.
+
+# ==============================================================================
+# Optional: CLI tools / اختياري: أدوات سطر الأوامر
+# Install with: pip install "python-snap7[cli]"
+# التثبيت: pip install "python-snap7[cli]"
+# ==============================================================================
+# rich
+# click
+
+# ==============================================================================
+# Development dependencies / متطلبات التطوير
+# Install with: pip install -e ".[test]"
+# التثبيت: pip install -e ".[test]"
+# ==============================================================================
+pytest>=7.0
+mypy>=1.0
+ruff>=0.1.0
+tox>=4.0
+tox-uv>=1.0
+types-setuptools
+types-click
+uv>=0.1.0
+
+# ==============================================================================
+# Documentation dependencies / متطلبات التوثيق
+# Install with: pip install -e ".[doc]"
+# التثبيت: pip install -e ".[doc]"
+# ==============================================================================
+sphinx>=7.0
+sphinx_rtd_theme>=2.0

@@ -1,0 +1,52 @@
+# docker-compose.yml
+# Python-snap7 Docker Compose Configuration
+# تكوين Docker Compose لمشروع python-snap7
+#
+# Usage / الاستخدام:
+#   docker-compose up              # Start the S7 server emulator / تشغيل محاكي خادم S7
+#   docker-compose up -d           # Start in background / تشغيل في الخلفية
+#   docker-compose down            # Stop and remove / إيقاف وحذف
+#   docker-compose run snap7 bash  # Open a shell / فتح سطر أوامر
+#
+# The server emulator listens on port 102 (S7 communication port).
+# يستمع محاكي الخادم على المنفذ 102 (منفذ اتصال S7).
+
+services:
+  # S7 Server Emulator / محاكي خادم S7
+  # Runs the built-in snap7 server for testing PLC communication
+  # يشغل خادم snap7 المدمج لاختبار اتصال PLC
+  snap7-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: snap7-server
+    ports:
+      # S7 communication port / منفذ اتصال S7
+      - "102:102"
+    command: snap7-server
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "python3", "-c", "import snap7; print('OK')" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Development Environment / بيئة التطوير
+  # Use this service for development and testing
+  # استخدم هذه الخدمة للتطوير والاختبار
+  snap7-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: snap7-dev
+    volumes:
+      # Mount source code for live development
+      # ربط الكود المصدري للتطوير المباشر
+      - .:/code
+    working_dir: /code
+    command: bash
+    stdin_open: true
+    tty: true
+    profiles:
+      - dev
