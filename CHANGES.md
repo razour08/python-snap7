@@ -1,6 +1,22 @@
 CHANGES
 =======
 
+2.1 (Unreleased)
+-----------------
+
+* Added Arabic language support (README_AR.rst + Arabic Sphinx documentation)
+* Added bilingual CONTRIBUTING.md (English + Arabic)
+* Added docker-compose.yml with S7 server emulator and dev environment
+* Added requirements.txt with bilingual comments
+* Added FAQ documentation (English + Arabic)
+* Added Troubleshooting guide (English + Arabic)
+* Added practical Arabic examples for industrial use cases
+* Added snap7.util.retry — retry decorator with exponential backoff
+* Added snap7.util.connection — ManagedClient with auto-reconnect and timeout config
+* Improved Dockerfile (optimized layers, EXPOSE, CMD, bilingual comments)
+* Improved .dockerignore (comprehensive exclusions)
+* Added pytest-cov support for coverage reports
+
 1.2
 ---
 

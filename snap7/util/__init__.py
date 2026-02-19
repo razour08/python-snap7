@@ -18,6 +18,9 @@ from .setters import (
     set_date,
 )
 
+from .retry import retry, RetryConfig
+from .connection import ManagedClient, ConnectionConfig
+
 from .getters import (
     get_bool,
     get_fstring,
@@ -85,4 +88,8 @@ __all__ = [
     "set_bool",
     "set_fstring",
     "set_string",
+    "retry",
+    "RetryConfig",
+    "ManagedClient",
+    "ConnectionConfig",
 ]

@@ -14,6 +14,9 @@ Contents:
    introduction
    installation
    development
+   docker
+   faq
+   troubleshooting
 
    API/client
    API/server
@@ -21,6 +24,12 @@ Contents:
    API/logo
    API/type
    API/util
+
+.. toctree::
+   :maxdepth: 2
+   :caption: التوثيق بالعربية (Arabic)
+
+   ar/index
 
 
 
